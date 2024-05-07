@@ -1,0 +1,41 @@
+*.class
+
+# Ignore Maven target directory
+/target/
+
+# Ignore Eclipse project files
+.project
+.classpath
+.settings/
+
+# Ignore IntelliJ project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore Python virtual environment
+venv/
+
+# Ignore Python compiled bytecode
+*.pyc
+__pycache__/
+
+# Ignore Python package installers
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore logs
+*.log
+
+# Ignore generated files
+*.jar
+*.war
+*.egg-info/
+dist/
+build/
+
+# Ignore editor specific files
+.vscode/
+*.swp
+*.swo
