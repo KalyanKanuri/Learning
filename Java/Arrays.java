@@ -1,11 +1,11 @@
 public class Arrays {
 
     static String passwordAnalyzer() {
-        String[] Password = {"XY01", "XY02", "XY03", "XY04"};
+        String[] password = {"XY01", "XY02", "XY03", "XY04"};
         StringBuilder result = new StringBuilder();
 
-        for (int i = Password.length-1; i>=2; i--) {
-            result.append(Password[i]);
+        for (int i = password.length-1; i>=2; i--) {
+            result.append(password[i]);
         }
 
         return result.toString();
