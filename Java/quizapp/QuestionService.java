@@ -27,8 +27,9 @@ public class QuestionService {
             for(String s : q.getOptions()) {
                 System.out.println(s +"\n");
             }
-            Scanner sc = new Scanner(System.in);
-            answers[i] = sc.nextLine();
+            try (Scanner sc = new Scanner(System.in)) {
+                answers[i] = sc.nextLine();
+            }
             i++;
         }
     }
