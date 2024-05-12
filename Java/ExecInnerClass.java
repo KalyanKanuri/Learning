@@ -17,7 +17,7 @@ class AnonymousInnerClass {
 }
 
 abstract class AbstractInnerClass {
-    abstract public void print();
+    public abstract void show();
 }
 
 public class ExecInnerClass {
@@ -29,6 +29,7 @@ public class ExecInnerClass {
         ic2.print();
 
         AnonymousInnerClass aic = new AnonymousInnerClass() {
+            @Override
             public void print() {
                 System.out.println("In new AnonymousInnerClass");
             }
@@ -37,11 +38,11 @@ public class ExecInnerClass {
 
         AbstractInnerClass abic = new AbstractInnerClass() {
             @Override
-            public void print() {
+            public void show() {
                 System.out.println("In new AbstractInnerClass");
             }
         };
-        abic.print();
+        abic.show();
     }
 
 }
