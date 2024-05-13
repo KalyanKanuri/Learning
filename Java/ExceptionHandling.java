@@ -1,5 +1,5 @@
 class TryCatch {
-    public void ExecTryCatch() {
+    public void execTryCatch() {
         int i = 0;
         int j = 0;
         try {
@@ -12,7 +12,7 @@ class TryCatch {
 }
 
 class TryMultiCatch {
-    public void ExecTryMultiCatch() {
+    public void execTryMultiCatch() {
         int i = 0;
         int j = 0;
         try {
@@ -27,7 +27,7 @@ class TryMultiCatch {
 }
 
 class ThrowCatch {
-    public void ExecThrowCatch(String s) {
+    public void execThrowCatch(String s) {
         if(s == null) {
             throw new NullPointerException("String is null");
         }
@@ -41,7 +41,7 @@ class CustomException extends Exception {
 }
 
 class DuckingException {
-    public void ExecDuckingException() throws CustomException {
+    public void execDuckingException() throws CustomException {
         throw new CustomException("this is a newly defined Exception");
     }
 }
@@ -49,14 +49,14 @@ class DuckingException {
 public class ExceptionHandling {
     public static void main(String[] args) {
         TryCatch  tc = new TryCatch();
-        tc.ExecTryCatch();
+        tc.execTryCatch();
 
         TryMultiCatch tmc = new TryMultiCatch();
-        tmc.ExecTryMultiCatch();
+        tmc.execTryMultiCatch();
 
         ThrowCatch tcc = new ThrowCatch();
         try {
-            tcc.ExecThrowCatch(null);
+            tcc.execThrowCatch(null);
             System.out.println("String is not null");
         } catch (NullPointerException e) {
             System.out.println("Incorrect String passage " +e);
@@ -71,7 +71,7 @@ public class ExceptionHandling {
 
         DuckingException de = new DuckingException();
         try {
-            de.ExecDuckingException();
+            de.execDuckingException();
         } catch (CustomException e) {
             System.out.println("Invoking Custom Exception using Ducking Exception concept " +e);
         }
