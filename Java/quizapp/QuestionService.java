@@ -28,24 +28,29 @@ public class QuestionService {
             for(String s : q.getOptions()) {
                 System.out.println(s);
             }
+            System.out.println("\n----------------------------------------");
             answers[i] = sc.nextLine();
+            System.out.println("-----------------------------------------");
             i++;
         }
         sc.close();
     }
 
     public void validateAnswers() {
+        System.out.println("Correct Answers are: \n");
         int score = 0;
         for(int i = 0; i < qc.length; i++) {
             QuestionContainer q = qc[i];
             String actualAnswer = q.getAnswer();
             String userAnswer = answers[i];
-
+            System.out.println(q.getId() +": " +q.getQuestion());
+            System.out.println(q.getAnswer());
             if(actualAnswer.equals(userAnswer)) {
                 score++;
             }
         }
-        System.out.println("Your score is " +score);
+        System.out.println("\nYour score is " +score);
+        System.out.println("Thank you for playing the quiz");
     }
 }
 
