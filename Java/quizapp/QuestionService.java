@@ -22,16 +22,16 @@ public class QuestionService {
         System.out.println("-------------------------------------------");
 
         int i = 0;
+        Scanner sc = new Scanner(System.in);
         for(QuestionContainer q : qc) {
             System.out.println(q.getId() +": " +q.getQuestion());
             for(String s : q.getOptions()) {
-                System.out.println(s +"\n");
+                System.out.println(s);
             }
-            try (Scanner sc = new Scanner(System.in)) {
-                answers[i] = sc.nextLine();
-            }
+            answers[i] = sc.nextLine();
             i++;
         }
+        sc.close();
     }
 
     public void validateAnswers() {
