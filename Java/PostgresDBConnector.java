@@ -16,16 +16,16 @@ public class PostgresDBConnector {
             System.out.println("Driver loaded");
         } catch (ClassNotFoundException ex) {
             System.out.println("Driver not found");
+            return;
         }
 
         // Create a connection
-        Connection connection = null;
+        Connection connection;
         try {
             connection = DriverManager.getConnection(url, username, password);
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            System.out.println("Connected to the PostgreSQL server successfully." +connection);
         } catch (SQLException ex) {
-            System.out.println("Connection failed.");
-            ex.printStackTrace();
+            System.out.println("Connection failed." +ex);            
             return;
         }
 
@@ -76,14 +76,19 @@ public class PostgresDBConnector {
                 System.out.println("Connection closed");
             }
         } catch (SQLException e) {
-            System.out.println("Connection not closed");
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            System.out.println("Connection not closed" +e.getMessage());
+            throw new ConnectionCloseException("Failed to close connection", e);
         }
     }
 
     private static class StatementCreationException extends RuntimeException {
         public StatementCreationException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
+    private static class ConnectionCloseException extends RuntimeException {
+        public ConnectionCloseException(String message, Throwable cause) {
             super(message, cause);
         }
     }
