@@ -1,4 +1,4 @@
-#------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------
 # Palindrome Number
 #
 # Given an integer x, return true if x is a 
@@ -18,18 +18,17 @@
 # Input: x = 10
 # Output: false
 # Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
-#------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------
 
 def isPalindrome(num):
- 
     if num == num[::-1]:
         print("Your number is palindrome")
         return True
     else:
         print("Your number is not a palindrome")
         return False
-       
+
+
 num = (input("Enter your number here: "))
 
 isPalindrome(num)
-    

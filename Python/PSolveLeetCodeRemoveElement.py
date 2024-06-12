@@ -1,4 +1,4 @@
-#----------------------------------------------------------------------------------------------------------------------------- 
+# -----------------------------------------------------------------------------------------------------------------------------
 # Remove Element
 #
 # Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. 
@@ -25,18 +25,19 @@
 # Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 # Note that the five elements can be returned in any order.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
-#-----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------------------------------
 
 def remove_element(li, val):
-    for i in range(0,len(li)):
+    for i in range(0, len(li)):
         if val in li:
             li.remove(val)
-        print (li)
+        print(li)
         i += i
         return li
+
+
 li = input("Enter your list here --> ").split()
 li = [int(x) for x in li]
 val = int(input("Enter number to removed from list --> "))
 
 remove_element(li, val)
-        

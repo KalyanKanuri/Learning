@@ -1,4 +1,4 @@
-#---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # The included code stub will read an integer, , from STDIN.
 #
 # Without using any string methods, try to print the following:
@@ -21,9 +21,9 @@
 # Output Format
 # 
 # Print the list of integers from 1 through n as a string, without spaces.
-#----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 
 n = int(input())
 
-for i in range(1,n+1):
-    print(i, end = "")
+for i in range(1, n + 1):
+    print(i, end="")
