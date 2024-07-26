@@ -1,12 +1,12 @@
 package org.learnspring;
 
 import org.learnspring.config.AppConfig;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-/**
+/*
+ * Hello world!
  * First Spring Project!
  *
  */
@@ -20,8 +20,9 @@ public class App {
         }
 
         // Using Java Config
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        LearnSpring ls = (LearnSpring) context.getBean("learnSpring1");
-        ls.learning();
+        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
+            LearnSpring ls = (LearnSpring) context.getBean("learnSpring1");
+            ls.learning();
+        }
     }
 }
