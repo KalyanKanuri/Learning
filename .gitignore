@@ -39,3 +39,42 @@ build/
 .vscode/
 *.swp
 *.swo
+
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# TypeScript compilation output
+dist/
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional: Uncomment if you're using Jest for testing
+# coverage/
+
+# Optional: Uncomment if you're using Next.js
+# .next/
+# out/
+
+# Logs
+logs
+*.log
