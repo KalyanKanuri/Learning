@@ -1,0 +1,1 @@
+ jack of hearts,  king of hearts,  five of spades,  queen of hearts,  ace of hearts,  eight of hearts,  nine of spades
