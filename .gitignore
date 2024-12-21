@@ -78,3 +78,13 @@ Thumbs.db
 # Logs
 logs
 *.log
+
+# Go build
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.test
+*.prof
+*.sum
