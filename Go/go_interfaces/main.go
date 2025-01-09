@@ -42,15 +42,16 @@ func (e electricBike) Accelerate() {
 	fmt.Println("Bike accelerated")
 }
 
+func OperateVehicle(v Vehicle) {
+	v.Start()
+	v.Accelerate()
+	v.Stop()
+}
+
 func main() {
 	car := Car{"Toyota", 2020}
 	bike := electricBike{"Tesla", 100}
 
-	car.Start()
-	car.Accelerate()
-	car.Stop()
-
-	bike.Start()
-	bike.Accelerate()
-	bike.Stop()
+	OperateVehicle(car)
+	OperateVehicle(bike)
 }
