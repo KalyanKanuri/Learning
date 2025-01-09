@@ -2,40 +2,55 @@ package main
 
 import "fmt"
 
-type shape interface {
-	getArea() float64
+type Vehicle interface {
+	Start()
+	Stop()
+	Accelerate()
 }
 
-type triangle struct {
-	base   float64
-	height float64
+type Car struct {
+	Model string
+	year  int
 }
 
-type square struct {
-	sideline float64
+func (c Car) Start() {
+	fmt.Println("Car started")
 }
 
-func (t triangle) getArea() float64 {
-	return 0.5 * t.base * t.height
+func (c Car) Stop() {
+	fmt.Println("Car stopped")
 }
 
-func (s square) getArea() float64 {
-	return s.sideline * s.sideline
+func (c Car) Accelerate() {
+	fmt.Println("Car accelerated")
 }
-func printArea(s shape) {
-	fmt.Println("Area: ", s.getArea())
+
+type electricBike struct {
+	Brand   string
+	Battery int
+}
+
+func (e electricBike) Start() {
+	fmt.Println("Bike started")
+}
+
+func (e electricBike) Stop() {
+	fmt.Println("Bike stopped")
+}
+
+func (e electricBike) Accelerate() {
+	fmt.Println("Bike accelerated")
 }
 
 func main() {
-	t := triangle{
-		base:   3,
-		height: 10,
-	}
+	car := Car{"Toyota", 2020}
+	bike := electricBike{"Tesla", 100}
 
-	s := square{
-		sideline: 4,
-	}
+	car.Start()
+	car.Accelerate()
+	car.Stop()
 
-	printArea(t)
-	printArea(s)
+	bike.Start()
+	bike.Accelerate()
+	bike.Stop()
 }
